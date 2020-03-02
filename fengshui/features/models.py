@@ -52,4 +52,4 @@ class Membership(models.Model):
     person = models.ForeignKey(RegUser, on_delete=models.CASCADE)
     group = models.ForeignKey(Direction, on_delete=models.CASCADE)
     date_of_birth = models.DateField()
-    zodiac_animal = models.CharField(max_length=120)
+    animal = models.CharField(max_length=120)
