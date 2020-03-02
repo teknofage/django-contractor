@@ -21,7 +21,6 @@ class RegUser(models.Model):
         ('M', 'Male'),
         ('F', 'Female'),
     )
-    gender = models.CharField(max_length=1, choices=GENDER_CHOICES)
     zodiac_animal = models.CharField(max_length=120)
     
     def __str__(self):
