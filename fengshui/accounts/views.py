@@ -17,3 +17,7 @@ class LogInView(TemplateView):
     
 class ProfileHomeView(TemplateView):
     template_name = 'registration/profile-home.html'
+    
+    
+class HomeView(TemplateView):
+    template_view = 'registration/home-view.html'

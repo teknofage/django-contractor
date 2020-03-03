@@ -4,24 +4,40 @@
 
 <section>
 
+</form><form action="submit" method="POST">
+        <!-- <form action='/register' method='POST'> -->
+ {% csrf_token %}
 <h3>What's your Chinese Zodiac animal?</h3>
 
-<form action="/action_page.php" method="get">
-  <input list="zodiac animal" name="zodiac animal">
-  <datalist id="zodiac animals">
-    <option value="Rat">
-    <option value="Ox">
-    <option value="Tiger">
-    <option value="Rabbit">
-    <option value="Dragon">
-    <option value="Snake">
-    <option value="Horse">
-    <option value="Sheep">
-    <option value="Monkey">
-    <option value="Rooster">
-    <option value="Dog">
-    <option value="Pig">
-  </datalist>
+<form action="/action_page.php">
+  <label for="zodiac animal">Select Your Chinese Zodiac Animal:</label>
+  <select id="zodiac animals" name="zodiac animals" required>
+    <option value="Rat">Rat</option>
+    <option value="Ox">Ox</option>
+    <option value="Tiger">Tiger</option>
+    <option value="Rabbit">Rabbit</option>
+    <option value="Dragon">Dragon</option>
+    <option value="Snake">Snake</option>
+    <option value="Horse">Horse</option>
+    <option value="Sheep">Sheep</option>
+    <option value="Monkey">Monkey</option>
+    <option value="Rooster">Rooster</option>
+    <option value="Dog">Dog</option>
+    <option value="Pig">Pig</option>
+  </select>
+
+<br>
+  <label for="gender"><b>Gender at Birth</b></label>
+  <select id="gender" name="gender" required>
+    <option value="Male">Male</option>
+    <option value="Female">Female</option>
+</select>
+<br>
+  <label for="b_date"><b>Birth Date</b></label>
+  <input type="date"  name="b_date" required>
+<br>
+
+
   <input type="submit">
 </form>
 
@@ -34,7 +50,7 @@
             <th>Year range</th>
             <th>Chinese zodiac</th>
         <tr>
-    </thead> == $0
+    </thead>
     <tbody class="tb-body__zebra">
         <tr>
             <td>Jan 23, 2031 – Feb 10, 2032 </td>
