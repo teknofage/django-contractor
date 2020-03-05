@@ -6,10 +6,13 @@
 <h2>Welcome, {{ user }}</h2>
 </br> 
 <form action="/accounts/login/profiles/home" method="POST">
-        <!-- <form action='/register' method='POST'> -->
+
  {% csrf_token %}
 <h3>What's your Chinese Zodiac animal?</h3>
 
+{{ form.as_p }}
+
+{% comment %}
   <label for="zodiac animal">Select Your Chinese Zodiac Animal:</label>
   <select id="zodiac animals" name="zodiac animals" required>
     <option value="Rat">Rat</option>
@@ -37,7 +40,7 @@
   <input type="date"  name="b_date" required>
 <br>
 
-
+{% endcomment %}
   <input type="submit">
 </form>
 

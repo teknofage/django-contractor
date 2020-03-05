@@ -57,7 +57,7 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'fengshui.urls'
-DEFAULT_LOGOUT_URL = '/'
+DEFAULT_LOGOUT_URL = '/accounts/login'
 LOGIN_REDIRECT_URL = 'profiles/home'
 
 TEMPLATES = [

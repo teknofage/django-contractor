@@ -20,8 +20,12 @@ class Direction(models.Model):
     name = models.CharField(max_length=128)
     animal = models.CharField(max_length=30)
     element = models.CharField(max_length=30)
-    flower_colour = models.CharField(max_length=30)
-    vase_colour = models.CharField(max_length=30)
+    flower_colour1 = models.CharField(max_length=30)
+    flower_colour2 = models.CharField(max_length=30)
+    min_num_flowers = models.IntegerField(default=0)
+    max_num_flowers = models.IntegerField(default=0)
+    vase_colour1 = models.CharField(max_length=30)
+    vase_colour2 = models.CharField(max_length=30)
     compass_direction = models.CharField(max_length=30)
     degree_lower = models.IntegerField(
         default=1,
