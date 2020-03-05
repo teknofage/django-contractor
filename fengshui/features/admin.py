@@ -1,7 +1,6 @@
 from django.contrib import admin
-from .models import RegUser, Direction, Membership
+from .models import Direction, Membership
 
 # Register your models here.
-admin.site.register(RegUser)
 admin.site.register(Direction)
 admin.site.register(Membership)

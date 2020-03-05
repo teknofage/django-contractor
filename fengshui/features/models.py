@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 from django.core.validators import MaxValueValidator, MinValueValidator
 
 # Create your models here.
@@ -11,21 +12,9 @@ class Event(models.Model):
     manager = models.CharField(max_length = 60)
     description = models.TextField(blank=True)
     
-def __str__(self):
-    return self.name
-
-class RegUser(models.Model):
-    name = models.CharField(max_length=128)
-    date_of_birth = models.DateField()
-    GENDER_CHOICES = (
-        ('M', 'Male'),
-        ('F', 'Female'),
-    )
-    zodiac_animal = models.CharField(max_length=120)
-    
     def __str__(self):
-        return self.name 
-    
+        return self.name
+
     
 class Direction(models.Model):
     name = models.CharField(max_length=128)
@@ -42,13 +31,13 @@ class Direction(models.Model):
         default=1,
         validators=[MaxValueValidator(360), MinValueValidator(0)]
      )
-    members = models.ManyToManyField(RegUser, through='Membership')
+    members = models.ManyToManyField(User, through='Membership')
     
     def __str__(self):
         return self.name
     
 class Membership(models.Model):
-    person = models.ForeignKey(RegUser, on_delete=models.CASCADE)
-    group = models.ForeignKey(Direction, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    direction = models.ForeignKey(Direction, on_delete=models.CASCADE)
     date_of_birth = models.DateField()
     animal = models.CharField(max_length=120)

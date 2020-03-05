@@ -15,9 +15,16 @@ class LogInView(TemplateView):
     template_name = 'registration/login.html'
     success_url = reverse_lazy('profile-home')
     
-class ProfileHomeView(TemplateView):
-    template_name = 'registration/profile-home.html'
+class ProfileSetupView(TemplateView):
+    template_name = 'registration/profile-setup.html'
+    
+    def post(self, request):
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect(reverse('home-view'))
+        return render(request, 'profile-setup.html', context={'form':form})
     
     
 class HomeView(TemplateView):
-    template_view = 'registration/home-view.html'
+    template_name = 'registration/home-view.html'
