@@ -36,4 +36,4 @@ class ProfileSetupView(CreateView):
         return True
     
 class HomeView(TemplateView):
-    template_name = 'registration/home-view.html'
+    template_name = 'home-view.html'
