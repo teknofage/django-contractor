@@ -9,26 +9,27 @@
 <div>
     You entered the following data about yourself:
     </br>
+    </br>
     Your Chinese Zodiac Animal: {{ form.zodiac_animal }}
-    </br>
-    Your Date of Birth: {{ user.date_of_birth  }}
-    </br>
-    Your Gender: {{ user.gender }}
 
-<div class="ProfileSetupForm">
-    {{ form.user.zodiac_animal }}
-    {{ form.subject.label_tag }}
-    {{ form.subject }}
+    </br>
+    Your Date of Birth: {{ form.date_of_birth  }}
+    </br>
+    Your Gender: {{ form.gender }}
+ </br>
 </div>
+</br>
+Made a mistake? Go back to the Profile Setup Page to enter your data again.
 
-    </div>
-</section>
+
+
+</br>
 </br>
 <section>
 
 Herein lie the answers you seek:
 </br>
-
+</br>
 Direction: 
 </br>
 Zodiac Animal you are attracting:
@@ -41,31 +42,8 @@ NUmber of flowers: ___________ or _____________
 </br>
 Vase Colour: _________________ or ______________________
 </br>
-Compass Direction: Between (degree_lower) and (degree_upper)
+Compass Direction: Between {{ degree_lower }} and {{ degree_upper }}
 
-
-
-
-
-name = models.CharField(max_length=128)
-    animal = models.CharField(max_length=30)
-    element = models.CharField(max_length=30)
-    flower_colour1 = models.CharField(max_length=30)
-    flower_colour2 = models.CharField(max_length=30)
-    min_num_flowers = models.IntegerField(default=0)
-    max_num_flowers = models.IntegerField(default=0)
-    vase_colour1 = models.CharField(max_length=30)
-    vase_colour2 = models.CharField(max_length=30)
-    compass_direction = models.CharField(max_length=30)
-    degree_lower = models.IntegerField(
-        default=1,
-        validators=[MaxValueValidator(360), MinValueValidator(0)]
-     )
-    degree_upper = models.IntegerField(
-        default=1,
-        validators=[MaxValueValidator(360), MinValueValidator(0)]
-     )
-    members = models.ManyToManyField(User, through='Membership')
 
 </section>
 {% endblock %}
