@@ -53,9 +53,14 @@ class HomeView(TemplateView):
     def get_context_data(self, request):
         
         user = self.queryset.get(id=pk)
+        profile = user.profile
         context = super().get_context_data(**kwargs)
-        context["form"] = {"zodiac_animal": user.zodiac_animal, "date_of_birth": "asdf", "gender":"asd"}
-        return context
+        context = {
+            "zodiac_animal": zodiac_animal, 
+            "date_of_birth": date_of_birth, 
+            "gender": gender,
+        }
+        return render(request, self.template_name, context)
     
         
 class AccountUpdate(UserPassesTestMixin, UpdateView):
