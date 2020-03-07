@@ -20,17 +20,17 @@
 </div>
 </br>
 Made a mistake? Go back to the Profile Setup Page to enter your data again.
-
+<a href="/registration/profile-setup.html">Go back and change your entries</a>
 
 
 </br>
 </br>
 <section>
 
-Herein lie the answers you seek:
+<h3>Herein lie the answers you seek:</h3>
 </br>
 </br>
-Direction: {{ profile.direction }}
+Best Direction: {{ profile.direction }}
 </br>
 Zodiac Animal you are attracting: {{ profile.direction.animal }}
 </br>
@@ -43,7 +43,9 @@ Number of flowers: {{ profile.direction.num_colours }}
 Vase Colour: {{ profile.direction.vase_colours }}
 </br>
 Compass Direction: Between {{ profile.direction.degree_lower }} and {{ profile.direction.degree_upper }}
-
+</br>
+</br>
+Place your budding flowers in the vase, between the compass directions given, in the appropriate part of your room. You should attract a strong relationship with a person of the corresponding Zodiac Animal Sign and Element (romantic or friendly, depending on your intentions.)
 
 </section>
 {% endblock %}
