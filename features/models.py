@@ -8,28 +8,16 @@ class Direction(models.Model):
     name = models.CharField(max_length=128)
     animal = models.CharField(max_length=30)
     element = models.CharField(max_length=30)
-    flower_colour1 = models.CharField(max_length=30)
-    flower_colour2 = models.CharField(max_length=30)
-    min_num_flowers = models.IntegerField(default=0)
-    max_num_flowers = models.IntegerField(default=0)
-    vase_colour1 = models.CharField(max_length=30)
-    vase_colour2 = models.CharField(max_length=30)
+    flower_colours = models.CharField(max_length=40)
+    num_flowers = models.CharField(max_length=40)
+    vase_colours = models.CharField(max_length=30)
     compass_direction = models.CharField(max_length=30)
-    degree_lower = models.IntegerField(
-        default=1,
-        validators=[MaxValueValidator(360), MinValueValidator(0)]
+    degree_lower = models.DecimalField(max_digits=5, decimal_places=2
      )
-    degree_upper = models.IntegerField(
-        default=1,
-        validators=[MaxValueValidator(360), MinValueValidator(0)]
+    degree_upper = models.DecimalField(max_digits=5, decimal_places=2
      )
-    members = models.ManyToManyField(User, through='Membership')
     
     def __str__(self):
         return self.name
     
-class Membership(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
-    direction = models.ForeignKey(Direction, on_delete=models.CASCADE)
-    date_of_birth = models.DateField()
-    animal = models.CharField(max_length=120)
+

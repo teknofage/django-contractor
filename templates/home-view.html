@@ -10,12 +10,12 @@
     You entered the following data about yourself:
     </br>
     </br>
-    Your Chinese Zodiac Animal: {{ form.zodiac_animal }}
+    Your Chinese Zodiac Animal: {{ profile.zodiac_animal }}
 
     </br>
-    Your Date of Birth: {{ form.date_of_birth  }}
+    Your Date of Birth: {{ profile.date_of_birth  }}
     </br>
-    Your Gender: {{ form.gender }}
+    Your Gender: {{ profile.gender }}
  </br>
 </div>
 </br>
@@ -30,19 +30,19 @@ Made a mistake? Go back to the Profile Setup Page to enter your data again.
 Herein lie the answers you seek:
 </br>
 </br>
-Direction: 
+Direction: {{ profile.direction }}
 </br>
-Zodiac Animal you are attracting:
+Zodiac Animal you are attracting: {{ profile.direction.animal }}
 </br>
-Their best element: 
+Their best element: {{ profile.direction.element }}
 </br>
-Flower Colour: ______ or ________
+Flower Colour: {{ profile.direction.flower_colours }}
 </br>
-NUmber of flowers: ___________ or _____________
+Number of flowers: {{ profile.direction.num_colours }}
 </br>
-Vase Colour: _________________ or ______________________
+Vase Colour: {{ profile.direction.vase_colours }}
 </br>
-Compass Direction: Between {{ degree_lower }} and {{ degree_upper }}
+Compass Direction: Between {{ profile.direction.degree_lower }} and {{ profile.direction.degree_upper }}
 
 
 </section>
