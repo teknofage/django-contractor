@@ -1,1 +1,1 @@
-web: gunicorn fengshui.wsgi --log-file -
+web: gunicorn app:app
