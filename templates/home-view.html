@@ -19,8 +19,8 @@
  </br>
 </div>
 </br>
-Made a mistake? Go back to the Profile Setup Page to enter your data again.
-<a href="/registration/profile-setup.html">Go back and change your entries</a>
+Made a mistake? Hit the Edit Profile button to back to the Profile Setup Page to enter your data again.
+        <a href="{% url 'profile-update' %}" class="btn btn-danger ml-2">Edit Profile</a></div>
 
 
 </br>
@@ -28,23 +28,6 @@ Made a mistake? Go back to the Profile Setup Page to enter your data again.
 </br>
 <section>
 
-<h3>Herein lie the answers you seek:</h3>
-</br>
-Best Direction for Flower Placement: {{ profile.direction }}
-</br>
-</br>
-Compass Direction: Between {{ profile.direction.degree_lower }} and {{ profile.direction.degree_upper }} degrees
-</br>
-</br>
-Flower Colour: {{ profile.direction.flower_colours }}
-</br>
-</br>
-Number of flowers: {{ profile.direction.num_flowers }}
-</br>
-</br>
-Vase Colour: {{ profile.direction.vase_colours }}
-</br>
-</br>
 </br>
 <h4>Instructions:</h4>
 </br>
@@ -57,5 +40,6 @@ Let this not be a deterrent, but instead an opportunity for personal growth and 
 </br>
 </br>
 </br>
+
 </section>
 {% endblock %}
