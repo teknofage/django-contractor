@@ -1,8 +1,9 @@
 from django.urls import path
-from accounts.views import SignUpView, LogInView, ProfileSetupView, ProfileUpdateView, HomeView
+from accounts.views import SplashView, SignUpView, LogInView, ProfileSetupView, ProfileUpdateView, HomeView
 
 
 urlpatterns = [
+    path('splash/', SplashView.as_view(), name='splash'),
     path('signup/', SignUpView.as_view(), name='signup'),
     path('login/', LogInView.as_view(), name='login'),
     path('login/profiles/home', ProfileSetupView.as_view(), name='profile-setup'),
