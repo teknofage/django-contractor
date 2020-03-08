@@ -25,27 +25,37 @@ Made a mistake? Go back to the Profile Setup Page to enter your data again.
 
 </br>
 </br>
+</br>
 <section>
 
 <h3>Herein lie the answers you seek:</h3>
 </br>
+Best Direction for Flower Placement: {{ profile.direction }}
 </br>
-Best Direction: {{ profile.direction }}
 </br>
-Zodiac Animal you are attracting: {{ profile.direction.animal }}
+Compass Direction: Between {{ profile.direction.degree_lower }} and {{ profile.direction.degree_upper }} degrees
 </br>
-Their best element: {{ profile.direction.element }}
 </br>
 Flower Colour: {{ profile.direction.flower_colours }}
 </br>
-Number of flowers: {{ profile.direction.num_colours }}
+</br>
+Number of flowers: {{ profile.direction.num_flowers }}
+</br>
 </br>
 Vase Colour: {{ profile.direction.vase_colours }}
 </br>
-Compass Direction: Between {{ profile.direction.degree_lower }} and {{ profile.direction.degree_upper }}
 </br>
 </br>
-Place your budding flowers in the vase, between the compass directions given, in the appropriate part of your room. You should attract a strong relationship with a person of the corresponding Zodiac Animal Sign and Element (romantic or friendly, depending on your intentions.)
-
+<h4>Instructions:</h4>
+</br>
+Place your budding flowers in the vase, in the quadrant of your home that corresponds to the compass degree range given. (Most smart phones have a compass app.) You should attract a strong relationship (romantic or friendly, depending on your intentions).
+</br>
+</br>
+<h5>Note Well:</h5>
+If you choose to use this Peach Blossom Feng Shui cure to attract a new romance, keep in mind that if you have unresolved relationship issues, those will still be reflected in any new relationship you attract until those issues are resolved.
+Let this not be a deterrent, but instead an opportunity for personal growth and an invitation to choose what kind of energy (and partner) you are inviting into your life.
+</br>
+</br>
+</br>
 </section>
 {% endblock %}
