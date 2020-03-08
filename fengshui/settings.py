@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     
     #third party apps
+    'django_extensions',
     # 'rest_framework',
     
     # my apps
@@ -57,7 +58,7 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'fengshui.urls'
-DEFAULT_LOGOUT_URL = '/accounts/login'
+DEFAULT_LOGOUT_URL = '/'
 LOGIN_REDIRECT_URL = 'profiles/home'
 
 TEMPLATES = [
