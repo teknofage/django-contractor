@@ -26,11 +26,11 @@ class LogInView(TemplateView):
     template_name = 'registration/login.html'
     success_url = reverse_lazy('profile-home')
     
-    def form_completed(self, form):
-        if profile.user == True:
-            return render(request, 'home-view.html', {'profile':profile_data})
-        else:
-            return render(request, 'registration/profile-setup.html', context={"form":form})
+    # def form_completed(self, form):
+    #     if profile.user == True:
+    #         return render(request, 'home-view.html', {'profile':profile_data})
+    #     else:
+    #         return render(request, 'registration/profile-setup.html', context={"form":form})
     
 class ProfileSetupView(CreateView):
     template_name = 'registration/profile-setup.html'
