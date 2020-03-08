@@ -25,7 +25,7 @@ SECRET_KEY = 'g$cl(7l!udh#ctv5ki@we3zs1aifp(k7$k80djxa@1868w+&1+'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', 'peachblossomlovecalculatorapp.herokuapp.com'
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'peachblossomlovecalculatorapp.herokuapp.com',
     
 ]
 
