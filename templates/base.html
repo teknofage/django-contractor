@@ -14,7 +14,7 @@
 
         {% if request.user.is_authenticated %}  
         <div class="text-white">Hello, <strong>{{ user }}</strong>!
-        <a href="{% url 'home-view' %}" class="btn btn-danger ml-2">Profile Home</a></div>
+        <a href="{% url 'show-home-view' %}" class="btn btn-danger ml-2">Profile Home</a></div>
         <a href="{% url 'logout' %}?next=/" class="btn btn-danger ml-2">Log Out</a></div>
         {% else %}
         <a href="{% url 'login' %}" class="btn btn-secondary ml-2">Log In</a>
