@@ -46,7 +46,7 @@ INSTALLED_APPS = [
     
     #third party apps
     'django_extensions',
-    'herokuapp',
+    # 'herokuapp',
     'rest_framework',
     # 'dj-database-url',
     
