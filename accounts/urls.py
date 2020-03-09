@@ -15,6 +15,6 @@ urlpatterns = [
     path('login/profiles/home', ProfileSetupView.as_view(), name='profile-setup'),
     path('login/accounts/update', ProfileUpdateView.as_view(), name='profile-update'),
     path('login/profiles/submit/redirect', HomeView.as_view(), name='home-view'),
-    path('login/profiles/redirect', HomeView.as_view(), name='show-home-view'),
+    path('login/profiles/home-view', HomeView.as_view(), name='show-home-view'),
     # path('logout/', auth_views.LogoutView.as_view(), name='logout'),
 ]   
