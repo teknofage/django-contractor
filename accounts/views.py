@@ -5,11 +5,16 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import render, redirect
 from django.urls import reverse_lazy, reverse
 from django.views.generic import CreateView, TemplateView, UpdateView, DeleteView
-from .forms import ProfileSetupForm
+from .forms import ProfileSetupForm, ProfileUpdateForm
 from .models import Profile
 from accounts.models import Direction
 
 # Create your views here.
+class SplashView(TemplateView):
+    template_name = 'splash.html'
+    success_url = 'splash.html'
+    # success_url = 'registration/signup.html'
+
 class SignUpView(CreateView):
     form_class = UserCreationForm
     success_url = reverse_lazy('login')
@@ -21,11 +26,11 @@ class LogInView(TemplateView):
     template_name = 'registration/login.html'
     success_url = reverse_lazy('profile-home')
     
-    def form_completed(self, form):
-        if profile.user == True:
-            return render(request, 'home-view.html', {'profile':profile_data})
-        else:
-            return render(request, 'registration/profile-setup.html', context={"form":form})
+    # def form_completed(self, form):
+    #     if profile.user == True:
+    #         return render(request, 'home-view.html', {'profile':profile_data})
+    #     else:
+    #         return render(request, 'registration/profile-setup.html', context={"form":form})
     
 class ProfileSetupView(CreateView):
     template_name = 'registration/profile-setup.html'
@@ -55,12 +60,23 @@ class HomeView(TemplateView):
         user = Profile.get_object()
         return (Profile.request.user.profile == user.profile)
 
-class AccountUpdate(UserPassesTestMixin, UpdateView):
+class ProfileUpdateView(UserPassesTestMixin, UpdateView):
     '''User is allowed to change their own account information.'''
+    form_class = ProfileUpdateForm
     model = Profile
-    template_name = 'registration/profile-setup.html'
-    fields = ['date_of_birth', 'zodiac_animal', 'gender']
+    template_name = 'registration/profile-update.html'
+    # fields = ['date_of_birth', 'zodiac_animal', 'gender']
     queryset = Profile.objects.all()
+    
+    def post(self, request):
+        form = ProfileUpdateForm(request.POST)
+        if form.is_valid():
+            profile = form.save(commit=False)
+            profile.user = request.user
+            profile.save()
+            return HttpResponseRedirect(reverse_lazy('home-view'))#, kwargs={"form":form}))
+        print(form)
+        return render(request, 'registration/profile-setup.html', context={"form":form})
 
     def get_success_url(self):
         '''Redirect to the profile page of the User.'''
