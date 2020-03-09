@@ -10,10 +10,6 @@ from .models import Profile
 from accounts.models import Direction
 
 # Create your views here.
-class SplashView(TemplateView):
-    template_name = 'splash.html'
-    success_url = 'splash.html'
-    # success_url = 'registration/signup.html'
 
 class SignUpView(CreateView):
     form_class = UserCreationForm
@@ -88,4 +84,5 @@ class ProfileUpdateView(UserPassesTestMixin, UpdateView):
         user = self.get_object()
         return (self.request.user == user)
     
-        
+def logout_view(request):
+    return render(request, 'registration/login.html')
